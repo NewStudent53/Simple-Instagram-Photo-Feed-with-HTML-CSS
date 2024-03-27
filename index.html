@@ -1,49 +1,128 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Photo Feed</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-    <header>
-      <h1>Simple Instagram Photo Feed with HTML CSS</h1>
-    </header>
-    <section>
-      <div class="front">
-        <div class="top">
-            <h2>My first photo</h2>
-            <p class="date">12/14</p>
-        </div>
-        <div class="img">
-            <img src="https://m.media-amazon.com/images/I/71TI8uHgy6L.jpg" alt="">
-        </div>
-        <div class="description">This is my first photo of the feed, this is a multi line comment for testing purposes. I'm learnign to code with...<strong>#BreatheCode</strong></div>
-      </div>  
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <title>Bootstrap Instagram Photo Feed</title>
+</head>
 
-      <div class="front">
-        <div class="top">
-            <h2>New photo</h2>
-            <p class="date">12/14</p>
-        </div>
-        <div class="img">
-            <img src="https://images.ctfassets.net/sfnkq8lmu5d7/3uflcBlX5j5maCsll5T3LJ/acb166d17e76373ab539580945e2b4d7/The-Wildest_Editorial_Baby_Face-The_Allure_of_Cute_Dogs_Hero.jpg?w=1000&h=750&fl=progressive&q=70&fm=jpg" alt="">
-        </div>
-        <div class="description">The internet approves this cute dog<strong>#BreatheCode</strong></div>
-      </div>  
+<body>
+    
+    <nav class="navbar fixed-top navbar-light bg-light p-1">
+        
+        <a class="navbar-brand" href="#">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram&#8482;</span>
+        </a>
+        
+        <ul class="nav justify-content-end">
+            <li class="nav-item align-self-center">
+                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
+                    Create a new post
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-lg btn-link px-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-cog"></i>
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item text-right" href="#">Profile</a>
+                    <a class="dropdown-item text-right" href="#">Accesibility</a>
+                    <a class="dropdown-item text-right" data-toggle="modal" data-target="#exampleModal">Privacy and Data</a>
+                    <hr></hr>
+                    <a class="dropdown-item text-right" href="#">Log Out</a>
+                </div>
+            </li>
+        </ul>
 
-      <div class="front">
-        <div class="top">
-            <h2>Recent photo</h2>
-            <p class="date">12/14</p>
+    </nav>
+
+    <div class="modal fade" id="exampleModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5>Create a new post</h5>
+                    <hr></hr>
+                    Caption:
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Publish</button>
+                </div>
+            </div>
         </div>
-        <div class="img">
-            <img src="https://www.recetasnestle.cl/sites/default/files/srh_recipes/efa409a900e1917c0ba5efbe1e897bfc.jpg" alt="">
+    </div>
+    
+    <!-- second(pregunta!)-->
+    <div class="container-fluid">
+        <div class="row mt-2" id="top-row"><br /><br /></div>
+        <div class="row p-2 mb-3" id="nav-pills">
+            <div class="mx-auto">
+                <ul class="nav nav-pills" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true"><i class="fas fa-th"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-square"></i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="description">Because no photo feed is cool without some food on it!<strong>#BreatheCode</strong></div>
-      </div>  
-    </section>
-    <footer>
-      
-    </footer>
-  </body>
+        
+        <div class="tab-content">
+            <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane active col-sm-12 col-md-6 mx-auto">
+                    <div class="row">
+                        <div class="col-8 mt-2">
+                            <h4>Test</h4>
+                        </div> 
+                        <div class="col-4 mt-3">
+                            <h6>99/99</h6>
+                        </div> 
+                        <div class="col-12 p-0">
+                            <img src="https://hips.hearstapps.com/goodhousekeeping/assets/17/30/pembroke-welsh-corgi.jpg"></img>
+                        </div> 
+                        <div class="col-12 pt-2 pb-2"><strong>204 Likes</strong></div>
+                        <div class="col-12">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales tellus non efficitur faucibus.</p>
+                        </div>
+                    </div>
+            </div>
+            
+            <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane col-sm-12 mx-auto p-0" style="background:white;">
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-4">
+                        <img src="https://www.shutterstock.com/image-vector/dog-animal-artwork-dizzy-work-260nw-2385740495.jpg" style="width:100%;"></img>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <img src="https://www.dailypaws.com/thmb/_V065sM9hRjVbxWhnWKoSqTLW3E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/aussi-puppy-sakura-park-2000-a5ac8d762bea406f84beb4d9ec745d15.jpg" style="width:100%;"></img>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <img src="https://i.ytimg.com/vi/QZLq9hs_cqc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLALvtdovqhKhkPvu3wJYT_XVILQ_Q" style="width:100%;"></img>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>        
+</body>
+
 </html>
+
+<!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/-->
+<!-- trademark=&#8482;-->
+<!-- check the page: https:/-->
